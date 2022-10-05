@@ -6,14 +6,14 @@ const Textform = (props) => {
     console.log("upperCase was clicked" + text);
     const newText = text.toUpperCase();
     setText(newText) ;
-    props.showAlert("converted to lowercase", "success");
+    props.showAlert("converted to UpperCase", "success");
   }
 
   const handleLowClick = () => {
     console.log("Lower was clicked" + text);
     const newText = text.toLowerCase();
     setText(newText) ;
-    props.showAlert("converted to uppercase", "success");
+    props.showAlert("converted to LowerCase", "success");
 
   }
   const handleClear = () => {
