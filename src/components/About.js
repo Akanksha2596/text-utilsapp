@@ -5,11 +5,9 @@ const About = (props) => {
      const myStyle = {
         color: props.mode === 'dark' ? 'white' :'#367588',
         backgroundColor: props.mode === 'dark' ? '#367588' :'white',
-        border: '2px soloid',
-        borderColor: props.mode === 'dark' ?'white': '#367588'
     }
   return (
-    <div className='container' style={myStyle}>
+    <div className='container' style={{color: props.mode === 'dark' ? 'white' :'#367588'}}>
         <h1 className='my-3'>About us</h1>
         <div className="accordion" id="accordionExample">
             <div className="accordion-item">

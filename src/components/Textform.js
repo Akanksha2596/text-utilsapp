@@ -51,16 +51,16 @@ const Textform = (props) => {
         <div className="mb-3">
           <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor: props.mode === 'dark' ? 'grey' :'white', color:props.mode === 'dark' ? 'white' :'#003153'}} id="myBox" rows="8"></textarea>
         </div>
-        <button className='btn btn-primary mx-1 my-1' onClick={handleUpClick}>Convert to uppercase</button>
-        <button className='btn btn-primary mx-1 my-1' onClick={handleLowClick}>Convert to lowercase</button>
-        <button className='btn btn-primary mx-1 my-1' onClick={handleClear}>Clear text</button>
-        <button className='btn btn-primary mx-1 my-1' onClick={handleCopy}>Copy text</button>
-        <button className='btn btn-primary mx-1 my-1' onClick={handleSpaces}>Handle extra spaces</button>
+        <button className='btn btn-primary mx-1 my-1' disabled={text.length === 0} onClick={handleUpClick}>Convert to uppercase</button>
+        <button className='btn btn-primary mx-1 my-1' disabled={text.length === 0} onClick={handleLowClick}>Convert to lowercase</button>
+        <button className='btn btn-primary mx-1 my-1' disabled={text.length === 0} onClick={handleClear}>Clear text</button>
+        <button className='btn btn-primary mx-1 my-1' disabled={text.length === 0} onClick={handleCopy}>Copy text</button>
+        <button className='btn btn-primary mx-1 my-1' disabled={text.length === 0} onClick={handleSpaces}>Handle extra spaces</button>
     </div>
     <div className='container my-2' style={{color: props.mode === 'dark' ? 'white' :'#003153'}}>
         <h2>Your text summary</h2>
         <p>{text.split(' ').filter((element) =>{return element.length !== 0}).length} words and {text.length} characters</p>
-        <p>{0.008 * text.split(" ").length} Minutes read</p>
+        <p>{Math.floor(0.3 * text.split(' ').filter((element) =>{return element.length !== 0}).length)} Minute read</p>
         <h2>Preview</h2>
         <p>{text.length > 0 ? text : "Enter Something to preview"}</p>
     </div>
